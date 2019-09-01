@@ -1,0 +1,30 @@
+@import-normalize;
+
+:root {
+  --black: rgba(0,0,0,0.85);
+  --textColor: rgba(0,0,0,.60);
+  --overlayColor: rgba(0,0,0,.50);
+  --bgColor: rgba(0, 0, 0, .02);
+  --white: #fefefe;
+  --purple: rgba(36, 19, 95, .30);
+  --error: #fb5c5c;
+}
+
+*::-moz-selection {
+  background-color: var(--purple);
+  color: var(--white);
+}
+
+*::selection {
+  background-color: var(--purple);
+  color: var(--white); }
+
+  #skip_nav {
+    position: fixed;
+    left: -10000px;
+    top: -10000px;
+    overflow: hidden; }
+    #skip_nav:active {
+      color: var(--black);
+      position: relative;
+    }
