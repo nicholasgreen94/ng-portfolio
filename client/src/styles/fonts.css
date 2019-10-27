@@ -1,0 +1,18 @@
+@import url('https://use.typekit.net/phl2bvx.css');
+
+@font-face {
+  font-family: 'Tiempos';
+  src: url('../assets/fonts/TiemposFineLight.otf')  format('opentype'); /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: 'Tiempos';
+  src: url('../assets/fonts/TiemposFineLightItalic.otf')  format('opentype'); /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: 'Tiempos';
+  src: url('../assets/fonts/TiemposFineRegularItalic.otf')  format('opentype'); /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: 'Tiempos';
+  src: url('../assets/fonts/TiemposFineRegular.otf')  format('opentype'); /* Safari, Android, iOS */
+}

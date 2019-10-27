@@ -1,0 +1,12 @@
+
+:root {
+  --black: rgba(0,0,0,0.95);
+  --textColor: rgba(0,0,0,.60);
+  --overlayColor: rgba(0,0,0,.50);
+  --bgColor: rgba(0, 0, 0, .02);
+  --white: #fefefe;
+  --purple: rgba(36, 19, 95, .30);
+  --error: #fb5c5c;
+  --primaryFont: 'Tiempos', Times, 'Times New Roman', Georgia, serif;
+  --secondaryFont: 'Europa', helvetica, Roboto, verdana, arial, sans-serif;
+}
