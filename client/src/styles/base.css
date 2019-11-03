@@ -27,7 +27,8 @@
 
 html,
 body {
-  min-height: 100vh;
+  height: 100%;
+  min-height: 100%;
   background-color: var(--black);
 }
 
@@ -49,6 +50,7 @@ html {
 
 body {
   margin: 0;
+  padding-top: 3.75rem;
 }
 
 img {
@@ -57,8 +59,15 @@ img {
   height: auto;
 }
 
-.container {
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.wrapper{
+  box-sizing: border-box;
   margin: 0 auto;
   width: 85%;
   max-width: 192rem;
+  position: relative;
 }

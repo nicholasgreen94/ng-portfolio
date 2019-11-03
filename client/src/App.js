@@ -1,11 +1,11 @@
 import React from 'react';
-import TestPage from './pages/test-page'
 import { Route, Switch, withRouter } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import LocomotiveScroll from 'locomotive-scroll';
 import Analytics from 'react-router-ga'
 import Header from './components/Header/Header'
+import Home from './pages/home'
 import './styles/index.css';
 
 
@@ -26,11 +26,9 @@ class App extends React.Component {
             </Helmet>
             <a href="#skip" id="skip_nav">{"Skip Nav"}</a>
             <a id="skip">{''}</a>
-            <div className="App">
+            <div className="App wrapper">
               <Header />
-              <div id="js-scroll">
-                <TestPage />
-              </div>
+              <Home />
             </div>
           </Analytics>
         </div>
