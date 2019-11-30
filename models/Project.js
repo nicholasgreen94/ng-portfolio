@@ -24,7 +24,7 @@ const ProjectSchema = new Schema({
     required: true
   },
   preview_photo: {
-    type: String,
+    type: Array,
     required: true
   },
   photos: [

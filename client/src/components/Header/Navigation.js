@@ -2,7 +2,6 @@ import React from 'react'
 import { Switch, Link } from 'react-router-dom'
 import Logo from '../../assets/svg/logo.svg'
 import ReactSVG from 'react-svg'
-import styled from 'styled-components'
 
 class Navigation extends React.Component{
   constructor(props) {
@@ -10,10 +9,8 @@ class Navigation extends React.Component{
     this.state = {
       visible: false,
       menuText: 'MENU',
-      toggleClass: 'menu-close'
+      toggleClass: 'menu-close',
     }
-    // this.handleMouseDown = this.handleMouseDown.bind(this)
-    // this.hideMenuOnDesktop = this.toggleMenu.bind(this)
     this.toggleMenu = this.toggleMenu.bind(this)
   }
 
@@ -24,13 +21,13 @@ class Navigation extends React.Component{
       this.setState(state => ({
         visible: !this.state.visible,
         menuText: "MENU",
-        toggleClass: "menu-close"
+        toggleClass: "menu-close",
       }))
     } else {
       this.setState(state => ({
         visible: !this.state.visible,
         menuText: "CLOSE",
-        toggleClass: "menu-open"
+        toggleClass: "menu-open",
       }))
     }
   }
@@ -38,20 +35,20 @@ class Navigation extends React.Component{
   render() {
     return(
       <div>
-        <div className="logo-menu">
-          <Link to="/" className='logo-link'>
+        <div className='logo-menu'>
+          <Link to='/' className='logo-link'>
             <ReactSVG src={Logo} />
           </Link>
           <span className='mobile-nav-button' onClick={this.toggleMenu}>{this.state.menuText}</span>
         </div>
-        <nav className={`main-nav ${this.state.toggleClass}`}>
+        <nav className={`main-nav ${this.state.toggleClass}`} role='navigation'>
           <div className='nav-wrapper'>
             <Switch>
-              <ul className="nav-list" key={1}>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/projects">Projects</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><a href="mailto:nicholasgreendesigns@gmail.com">Contact</a></li>
+              <ul className='nav-list' key={'list'}>
+                <li><Link to='/'><span className='number'>01</span>Home</Link></li>
+                <li><Link to='/projects'><span className='number'>02</span>Projects</Link></li>
+                <li><Link to='/about'><span className='number'>03</span>About</Link></li>
+                <li><a href='mailto:nicholasgreendesigns@gmail.com'><span className='number'>04</span>Contact</a></li>
               </ul>
             </Switch>
           </div>
@@ -61,11 +58,5 @@ class Navigation extends React.Component{
   }
 }
 
-// const Nav = styled.div`
-//   transform: translate3d(0, -50%, 0);
-//   position: absolute;
-//   top: 50%;
-//   right: 0;
-// `
 
 export default Navigation

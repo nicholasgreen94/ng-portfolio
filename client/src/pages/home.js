@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import LocomotiveScroll from 'locomotive-scroll'
 import styled from 'styled-components'
 import ReactSVG from 'react-svg'
-import MyImage from '../assets/images/IMG_2893.jpg'
+import { Grid, Row, Col } from 'react-flexbox-grid';
 import NYC from '../assets/svg/nyc-white.svg'
+import { TweenMax, Sine } from 'gsap'
+import ScrollMagic from 'scrollmagic'
+import IndexText from '../components/Text/IndexText'
 import ProjectListItem from '../components/Projects/ProjectListItem'
-const axios = require('axios')
-
 
 
 class Home extends Component {
@@ -28,38 +28,61 @@ class Home extends Component {
    } catch (err) {
      console.log(err)
    }
+   TweenMax.to('.index-heading span', 0.48, { y: 0, ease: (.38,.23,.35,1), delay: 0.86 })
+
+   const controller = new ScrollMagic.Controller()
+   let revealElements = document.getElementsByClassName("project")
+   let projArray = []
+   for (let i=0; i<revealElements.length; i++) {
+      projArray.push(revealElements[i]);
+    }
+    projArray.forEach((proj, i) => {
+      new ScrollMagic.Scene({
+        triggerElement: proj, // y value not modified, so we can use element as trigger as well
+        offset: 100,												 // start a little later
+        triggerHook: 0.9,
+        // reverse: false,
+      })
+        .setClassToggle(proj, "visible") // add class toggle
+        .addTo(controller)
+    })
+
   }
 
   render() {
     let state = this.state.data
     const ProjectList = state.map(function(project, i){
-      {console.log(project)}
        return (
+         <Col xs={12} sm={6}>
           <div className="project" key={project._id} data-title={project.name}>
-            <ProjectListItem project={project} counter={i} />
+              <ProjectListItem project={project} counter={i} />
           </div>
+        </Col>
         )
       })
+
     return(
-      <div>
-        <IntroText>A mutli-disciplinary digital designer, developer, creator of websites, experiences, applications, and meaningful products.</IntroText>
-        <div className='image-location' style={{ position: 'absolute', left: 0 }}>
-          <img src={MyImage} alt="me" className='my-image' />
+      <div className='index'>
+        <div className='index-text-wrapper'>
+          <h1>
+            <IndexText />
+          </h1>
+        </div>
+        <div className='image-location'>
+          <div id='my-image'></div>
           <ReactSVG src={NYC} className='nyc' />
         </div>
-        <div className="project-list">
-          { ProjectList }
+        <div className='project-list'>
+          <Grid fluid>
+            <Row>
+              { ProjectList }
+            </Row>
+          </Grid>
         </div>
       </div>
     )
   }
 }
 
-const IntroText = styled.h1`
-  font-size: 34px;
-  font-weight: 400;
-  line-height: 1.2;
-  max-width: 19rem;
-`
 
 export default Home

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid, Row } from 'react-flexbox-grid';
 import styled from 'styled-components'
 import Navigation from './Navigation'
 

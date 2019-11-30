@@ -1,6 +1,9 @@
 @import "reset.css";
 @import "fonts.css";
 @import "variables.css";
+@import "keyframes.css";
 @import "base.css";
 @import "header.css";
 @import "home.css";
+@import "project.css";
+@import "mobile-media-queries.css";
