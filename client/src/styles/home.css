@@ -15,6 +15,8 @@
 
 .index-text-wrapper h1 {
   line-height: 1;
+  position: relative;
+  z-index: 750;
 }
 
 .index-heading {
@@ -25,14 +27,20 @@
 
 .index-heading span {
   display: inline-block;
-  transform: translateY(3rem);
+  transform: translateY(105%);
+}
+
+.image-location-wrap {
+  height: 29.875rem;
+  position: relative;
 }
 
 .image-location {
-  transform: translate3d(-2.675rem, -6.275rem, 0);
+  transform: translate3d(0, -6.275rem, 0);
   width: 100%;
   z-index: 100;
-  position: relative;
+  position: absolute;
+  right: 10%;
 }
 
 #my-image {
@@ -68,8 +76,13 @@
   .index-text-wrapper {
     max-width: 30.75rem;
   }
+  .image-location-wrap {
+    height: 35rem;
+  }
   .image-location {
-    transform: translate3d(6.87rem, -6.275rem, 0);
+    transform: translate3d(0, -6.275rem, 0);
+    width: auto;
+    right: 0;
   }
   #my-image {
     height: 35rem;
@@ -79,6 +92,15 @@
   }
   .nyc {
     top: 30.15rem;
-    right: 25.85rem;
+    right: 19.65rem;
+  }
+}
+
+@media screen and (min-width: 49.0625rem) {
+  .index-text-wrapper {
+    max-width: 45rem;
+  }
+  .image-location {
+    transform: translate3d(0, -12rem, 0);
   }
 }

@@ -9,7 +9,7 @@ import IndexText from '../components/Text/IndexText'
 import ProjectListItem from '../components/Projects/ProjectListItem'
 
 
-class Home extends Component {
+class Index extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -53,8 +53,8 @@ class Home extends Component {
     let state = this.state.data
     const ProjectList = state.map(function(project, i){
        return (
-         <Col xs={12} sm={6}>
-          <div className="project" key={project._id} data-title={project.name}>
+         <Col xs={12} sm={6} className="project">
+          <div key={project._id} data-title={project.name}>
               <ProjectListItem project={project} counter={i} />
           </div>
         </Col>
@@ -68,9 +68,11 @@ class Home extends Component {
             <IndexText />
           </h1>
         </div>
-        <div className='image-location'>
-          <div id='my-image'></div>
-          <ReactSVG src={NYC} className='nyc' />
+        <div className='image-location-wrap'>
+          <div className='image-location'>
+            <div id='my-image'></div>
+            <ReactSVG src={NYC} className='nyc' />
+          </div>
         </div>
         <div className='project-list'>
           <Grid fluid>
@@ -85,4 +87,4 @@ class Home extends Component {
 }
 
 
-export default Home
+export default Index

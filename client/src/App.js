@@ -5,7 +5,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import LocomotiveScroll from 'locomotive-scroll';
 // import Analytics from 'react-router-ga' <Analytics id="UA-114430954-1">
 import Header from './components/Header/Header'
-import Home from './pages/home'
+import Index from './pages/index'
 import './styles/index.css';
 
 
@@ -27,7 +27,9 @@ class App extends React.Component {
             <a id='skip'>{''}</a>
             <div className="App wrapper">
               <Header />
-              <Home />
+              <Switch location={location}>
+                <Route exact path="/" component={Index} />
+              </Switch>
             </div>
         </div>
       )} />
